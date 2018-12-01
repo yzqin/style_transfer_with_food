@@ -67,5 +67,5 @@ update_html_freq = 1000 # frequency of saving training results to html
 # Details 
 niter = 100  # of iter at starting learning rate
 niter_decay = 100 # of iter to linearly decay learning rate to zero
-lambda_identity = 0.5
+lambda_identity = 0.0
 
