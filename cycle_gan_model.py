@@ -48,14 +48,14 @@ class CycleGANModel(BaseModel):
             self.criterionGAN = networks.GANLoss(use_lsgan=not config.no_lsgan).to(self.device)
             self.criterionCycle = torch.nn.L1Loss()
             self.criterionIdt = torch.nn.L1Loss()
-            # initialize configimizers
-            self.configimizer_G = torch.optim.Adam(itertools.chain(self.netG_A.parameters(), self.netG_B.parameters()),
+            # initialize optimizers
+            self.optimizer_G = torch.optim.Adam(itertools.chain(self.netG_A.parameters(), self.netG_B.parameters()),
                                                 lr=config.lr, betas=(config.beta1, 0.999))
-            self.configimizer_D = torch.optim.Adam(itertools.chain(self.netD_A.parameters(), self.netD_B.parameters()),
+            self.optimizer_D = torch.optim.Adam(itertools.chain(self.netD_A.parameters(), self.netD_B.parameters()),
                                                 lr=config.lr, betas=(config.beta1, 0.999))
-            self.configimizers = []
-            self.configimizers.append(self.configimizer_G)
-            self.configimizers.append(self.configimizer_D)
+            self.optimizers = []
+            self.optimizers.append(self.optimizer_G)
+            self.optimizers.append(self.optimizer_D)
 
     def set_input(self, input):
         AtoB = self.config.direction == 'AtoB'
@@ -119,17 +119,17 @@ class CycleGANModel(BaseModel):
         self.loss_G = self.loss_G_A + self.loss_G_B + self.loss_cycle_A + self.loss_cycle_B + self.loss_idt_A + self.loss_idt_B
         self.loss_G.backward()
 
-    def configimize_parameters(self):
+    def optimize_parameters(self):
         # forward
         self.forward()
         # G_A and G_B
         self.set_requires_grad([self.netD_A, self.netD_B], False)
-        self.configimizer_G.zero_grad()
+        self.optimizer_G.zero_grad()
         self.backward_G()
-        self.configimizer_G.step()
+        self.optimizer_G.step()
         # D_A and D_B
         self.set_requires_grad([self.netD_A, self.netD_B], True)
-        self.configimizer_D.zero_grad()
+        self.optimizer_D.zero_grad()
         self.backward_D_A()
         self.backward_D_B()
-        self.configimizer_D.step()
+        self.topimizer_D.step()
