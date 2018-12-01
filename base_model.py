@@ -15,16 +15,16 @@ class BaseModel():
     def name(self):
         return 'BaseModel'
 
-    def initialize(self, opt):
-        self.opt = opt
-        self.gpu_ids = opt.gpu_ids
-        self.isTrain = opt.isTrain
+    def initialize(self, config):
+        self.config = config
+        self.gpu_ids = config.gpu_ids
+        self.isTrain = config.isTrain
         if self.gpu_ids:
             self.device = torch.device('cuda:0,1')
         else:
             self.device = torch.device('cpu')
-        self.save_dir = os.path.join(opt.checkpoints_dir, opt.name)
-        if opt.resize_or_crop != 'scale_width':
+        self.save_dir = os.path.join(config.checkpoints_dir, config.name)
+        if config.resize_or_crop != 'scale_width':
             torch.backends.cudnn.benchmark = True
         self.loss_names = []
         self.model_names = []
@@ -38,11 +38,11 @@ class BaseModel():
         pass
 
     # load and print networks; create schedulers
-    def setup(self, opt, parser=None):
+    def setup(self, config, parser=None):
         if self.isTrain:
-            self.schedulers = [networks.get_scheduler(optimizer, opt) for optimizer in self.optimizers]
-        if not self.isTrain or opt.continue_train:
-            load_suffix = 'iter_%d' % opt.load_iter if opt.load_iter > 0 else opt.epoch
+            self.schedulers = [networks.get_scheduler(optimizer, config) for optimizer in self.optimizers]
+        if not self.isTrain or config.continue_train:
+            load_suffix = 'iter_%d' % config.load_iter if config.load_iter > 0 else config.epoch
             self.load_networks(load_suffix)
 
     # make models eval mode during test time
