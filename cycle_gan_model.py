@@ -49,9 +49,9 @@ class CycleGANModel(BaseModel):
             self.criterionCycle = torch.nn.L1Loss()
             self.criterionIdt = torch.nn.L1Loss()
             # initialize configimizers
-            self.configimizer_G = torch.configim.Adam(itertools.chain(self.netG_A.parameters(), self.netG_B.parameters()),
+            self.configimizer_G = torch.optim.Adam(itertools.chain(self.netG_A.parameters(), self.netG_B.parameters()),
                                                 lr=config.lr, betas=(config.beta1, 0.999))
-            self.configimizer_D = torch.configim.Adam(itertools.chain(self.netD_A.parameters(), self.netD_B.parameters()),
+            self.configimizer_D = torch.optim.Adam(itertools.chain(self.netD_A.parameters(), self.netD_B.parameters()),
                                                 lr=config.lr, betas=(config.beta1, 0.999))
             self.configimizers = []
             self.configimizers.append(self.configimizer_G)
