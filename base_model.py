@@ -15,6 +15,7 @@ class BaseModel():
         self.isTrain = config.isTrain
         if self.gpu_ids:
             self.device = torch.device('cuda:0')
+            print(torch.device)
         else:
             self.device = torch.device('cpu')
         self.save_dir = os.path.join(config.checkpoints_dir, config.name)
