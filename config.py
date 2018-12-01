@@ -33,7 +33,6 @@ epoch = 'latest'
 load_iter = 0
 continue_train = False
 save_latest_freq = 10000 # frequency of saving the latest results
-save_epoch_freq = 50 # 'frequency of saving checkpoints at the end of epochs'
 epoch_count = 1
 no_html = True
 lambda_A = 10.0
@@ -58,7 +57,6 @@ lr_decay_iters = 50  # multiply by a gamma every lr_decay_iters iterations
 # Visiualization
 display_id = 1 #window id of the web display
 display_winsize = 256
-display_freq = 4000 # frequency of showing training results on screen
 display_ncols = 4 # display all images in a single visdom web panel with certain number of images per row
 display_server = "http://localhost"
 display_env = 'main'
@@ -66,7 +64,6 @@ display_port = 8097
 update_html_freq = 1000 # frequency of saving training results to html
 
 # Details 
-print_freq = 100 # frequency of showing training results on console
 niter = 100  # of iter at starting learning rate
 niter_decay = 100 # of iter to linearly decay learning rate to zero
 lambda_identity = 0.5
