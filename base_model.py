@@ -6,12 +6,6 @@ import networks
 
 class BaseModel():
 
-    # modify parser to add command line options,
-    # and also change the default values if needed
-    @staticmethod
-    def modify_commandline_options(parser, is_train):
-        return parser
-
     def name(self):
         return 'BaseModel'
 
@@ -20,7 +14,7 @@ class BaseModel():
         self.gpu_ids = config.gpu_ids
         self.isTrain = config.isTrain
         if self.gpu_ids:
-            self.device = torch.device('cuda:1')
+            self.device = torch.device('cuda:0')
         else:
             self.device = torch.device('cpu')
         self.save_dir = os.path.join(config.checkpoints_dir, config.name)
