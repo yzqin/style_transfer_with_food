@@ -1,6 +1,7 @@
 # Dataset: should have subfolders trainA, trainB, valA, valB
 # dataroot = '/datasets/home/53/853/y1qin/dataset'
 dataroot = '/Users/yuzheqin/yuzhe_project/temp_data'
+# dataroot = '/home/yuzhe/temp_data'
 
 # Dataset: 
 batch_size = 64
@@ -36,6 +37,8 @@ save_epoch_freq = 5 # 'frequency of saving checkpoints at the end of epochs'
 epoch_count = 1
 verbose = True # if specified, print more debugging information
 no_html = True
+lambda_A = 10.0
+save_by_iter = True
 
 # CGAN
 norm = 'instance' # or batch
