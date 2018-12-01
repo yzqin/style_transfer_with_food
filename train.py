@@ -1,6 +1,6 @@
 import time
 from data import CreateDataLoader
-from models import create_model
+from cycle_gan_model import CycleGANModel
 from util.visualizer import Visualizer
 import config
 
@@ -11,7 +11,8 @@ if __name__ == '__main__':
     dataset_size = len(data_loader)
     print('#training images size= %d' % dataset_size)
 
-    model = create_model(config)
+    model = CycleGANModel()
+    model.initialize(config)
     model.setup(config)
     visualizer = Visualizer(config)
     total_steps = 0
@@ -31,11 +32,13 @@ if __name__ == '__main__':
             model.set_input(data)
             model.optimize_parameters()
 
-            if total_steps % config.display_freq == 0:
+            # Visualization
+            if total_steps % 400 == 0:
                 save_result = total_steps % config.update_html_freq == 0
                 visualizer.display_current_results(model.get_current_visuals(), epoch, save_result)
 
-            if total_steps % config.print_freq == 0:
+            # Print log
+            if total_steps % 100 == 0:
                 losses = model.get_current_losses()
                 t = (time.time() - iter_start_time) / config.batch_size
                 visualizer.print_current_losses(epoch, epoch_iter, losses, t, t_data)
@@ -48,7 +51,8 @@ if __name__ == '__main__':
                 model.save_networks(save_suffix)
 
             iter_data_time = time.time()
-        if epoch % config.save_epoch_freq == 0:
+
+        if epoch % 50 == 0:
             print('saving the model at the end of epoch %d, iters %d' % (epoch, total_steps))
             model.save_networks('latest')
             model.save_networks(epoch)

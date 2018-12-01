@@ -1,6 +1,6 @@
 import os
 from data import CreateDataLoader
-from models import create_model
+from cycle_gan_model import CycleGANModel
 from util.visualizer import save_images
 from util import html
 import config
@@ -22,18 +22,21 @@ if __name__ == '__main__':
     config.serial_batches = True  # no shuffle
     config.no_flip = True    # no flip
     config.display_id = -1   # no visdom display
+
+    model = CycleGANModel()
+    model.initialize(config)
+    model.setup(config)
+    print("Network Model Created")
     data_loader = CreateDataLoader(config)
     dataset = data_loader.load_data()
-    model = create_model(config)
-    model.setup(config)
+
+
     # create a website
     web_dir = os.path.join(config.results_dir, config.name, '%s_%s' % (config.phase, config.epoch))
     webpage = html.HTML(web_dir, 'Experiment = %s, Phase = %s, Epoch = %s' % (config.name, config.phase, config.epoch))
     # test with eval mode. This only affects layers like batchnorm and dropout.
-    # pix2pix: we use batchnorm and dropout in the original pix2pix. You can experiment it with and without eval() mode.
     # CycleGAN: It should not affect CycleGAN as CycleGAN uses instancenorm without dropout.
-    if config.eval:
-        model.eval()
+    # model.eval()
     for i, data in enumerate(dataset):
         if i >= config.num_test:
             break
