@@ -4,7 +4,7 @@ dataroot = '/Users/yuzheqin/yuzhe_project/temp_data'
 # dataroot = '/home/yuzhe/temp_data'
 
 # Dataset: 
-batch_size = 64
+batch_size = 4
 serial_batches = False
 num_threads = 4
 max_dataset_size = 10000
@@ -23,7 +23,7 @@ no_flip = False
 # General
 model = 'cycle_gan'
 no_lsgan = True
-gpu_ids = [] #e.g. 0  0,1,2, 0,2. use -1 for CPU'
+gpu_ids = [1] #e.g. 0  0,1,2, 0,2. use -1 for CPU'
 
 # Training
 name = 'experiment'
@@ -36,6 +36,7 @@ save_latest_freq = 10000 # frequency of saving the latest results
 epoch_count = 1
 no_html = True
 lambda_A = 10.0
+lambda_B = 10.0
 save_by_iter = True
 
 # CGAN

@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
         for i, data in enumerate(dataset):
             iter_start_time = time.time()
-            if total_steps % config.print_freq == 0:
+            if total_steps % 100 == 0:
                 t_data = iter_start_time - iter_data_time
             visualizer.reset()
             total_steps += config.batch_size
