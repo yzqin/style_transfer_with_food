@@ -1,7 +1,7 @@
 # Dataset: should have subfolders trainA, trainB, valA, valB
 # dataroot = '/datasets/home/53/853/y1qin/dataset'
-dataroot = '/Users/yuzheqin/yuzhe_project/temp_data'
-# dataroot = '/home/yuzhe/temp_data'
+# dataroot = '/Users/yuzheqin/yuzhe_project/temp_data'
+dataroot = '/home/yuzhe/temp_data'
 
 # Dataset: 
 batch_size = 4
