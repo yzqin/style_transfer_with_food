@@ -23,7 +23,7 @@ no_flip = False
 # General
 model = 'cycle_gan'
 no_lsgan = True
-gpu_ids = [1] #e.g. 0  0,1,2, 0,2. use -1 for CPU'
+gpu_ids = [0] #e.g. 0  0,1,2, 0,2. use -1 for CPU'
 
 # Training
 name = 'experiment'
