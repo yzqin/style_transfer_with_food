@@ -9,9 +9,9 @@ num_threads = 4
 max_dataset_size = 10000
 dataset_mode = 'unaligned' #[unaligned | aligned | single]
 phase = 'train' # train, val, test, etc
-resize_or_crop = 'resize_and_crop' # [resize_and_crop|crop|scale_width|scale_width_and_crop|none]
-loadSize = 286
-fineSize = 256 # crop images to this
+resize_or_crop = 'scale_width_and_crop' # [resize_and_crop|crop|scale_width|scale_width_and_crop|none]
+loadSize = 572
+fineSize = 512 # crop images to this
 output_nc = 3
 input_nc = 3
 isTrain = True # True or test
@@ -38,10 +38,10 @@ lambda_B = 10.0
 save_by_iter = True
 niter = 100  # of iter at starting learning rate
 niter_decay = 100 # of iter to linearly decay learning rate to zero
-lambda_identity = 0.0
+lambda_identity = 0.5
 
 # CGAN
-norm = 'instance' # or batch
+norm = 'instance' 
 netG = 'resnet_9blocks'
 netD = 'basic'
 ngf = 64 # gen filters in first conv layer
