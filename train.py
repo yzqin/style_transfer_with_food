@@ -9,7 +9,10 @@ if __name__ == '__main__':
     data_loader = CreateDataLoader(config)
     dataset = data_loader.load_data()
     dataset_size = len(data_loader)
-    print('#training images size= %d' % dataset_size)
+    print('***************************************************')
+    print('ECE 285f Project: Food Style Transfer')
+    print('Training demo start')
+    print('Training set size= %d' % dataset_size)
 
     model = CycleGANModel()
     model.initialize(config)

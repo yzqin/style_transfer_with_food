@@ -9,7 +9,7 @@ import config
 if __name__ == '__main__':
     # Testing
     config.ntest = 2000
-    config.results_dir = './test_results/'
+    config.results_dir = '../test_results/'
     config.aspect_ratio = 1.0
     config.eval = True
     config.num_test = 50

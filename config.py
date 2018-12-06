@@ -1,9 +1,8 @@
-# Dataset: should have subfolders trainA, trainB, valA, valB
 # dataroot = '/datasets/home/53/853/y1qin/dataset'
 #dataroot = '/Users/yuzheqin/yuzhe_project/temp_data'
-dataroot = '/home/yuzhe/temp_data'
 
 # Dataset: 
+dataroot = '/home/yuzhe/temp_data'
 batch_size = 1
 serial_batches = False
 num_threads = 4
@@ -34,10 +33,12 @@ load_iter = 0
 continue_train = False
 save_latest_freq = 10000 # frequency of saving the latest results
 epoch_count = 1
-no_html = True
 lambda_A = 10.0
 lambda_B = 10.0
 save_by_iter = True
+niter = 100  # of iter at starting learning rate
+niter_decay = 100 # of iter to linearly decay learning rate to zero
+lambda_identity = 0.0
 
 # CGAN
 norm = 'instance' # or batch
@@ -63,9 +64,6 @@ display_server = "http://localhost"
 display_env = 'main'
 display_port = 8097
 update_html_freq = 1000 # frequency of saving training results to html
+no_html = True
 
-# Details 
-niter = 100  # of iter at starting learning rate
-niter_decay = 100 # of iter to linearly decay learning rate to zero
-lambda_identity = 0.0
 

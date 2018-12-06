@@ -66,7 +66,7 @@ class Visualizer():
         self.saved = False
 
     def throw_visdom_connection_error(self):
-        print('\n\nCould not connect to Visdom server (https://github.com/facebookresearch/visdom) for displaying training progress.\nYou can suppress connection to Visdom using the option --display_id -1. To install visdom, run \n$ pip install visdom\n, and start the server by \n$ python -m visdom.server.\n\n')
+        print('\n\nCould not connect to Visdom server')
         exit(1)
 
     # |visuals|: dictionary of images to display or save
@@ -160,7 +160,7 @@ class Visualizer():
 
     # losses: same format as |losses| of plot_current_losses
     def print_current_losses(self, epoch, i, losses, t, t_data):
-        message = '(epoch: %d, iters: %d, time: %.3f, data: %.3f) ' % (epoch, i, t, t_data)
+        message = '(epoch: %d, iters: %d) ' % (epoch, i)
         for k, v in losses.items():
             message += '%s: %.3f ' % (k, v)
 

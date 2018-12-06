@@ -1,8 +1,8 @@
 import torch
 import itertools
 from util.image_pool import ImagePool
-from base_model import BaseModel
-import networks
+from util.base_model import BaseModel
+import util.networks as network
 
 
 class CycleGANModel(BaseModel):
@@ -28,7 +28,6 @@ class CycleGANModel(BaseModel):
 
         # load/define networks
         # The naming conversion is different from those used in the paper
-        # Code (paper): G_A (G), G_B (F), D_A (D_Y), D_B (D_X)
         self.netG_A = networks.define_G(config.input_nc, config.output_nc, config.ngf, config.netG, config.norm,
                                         not config.no_dropout, config.init_type, config.init_gain, self.gpu_ids)
         self.netG_B = networks.define_G(config.output_nc, config.input_nc, config.ngf, config.netG, config.norm,
