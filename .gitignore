@@ -2,7 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-temp_weight/
+/temp_weight/
 
 # C extensions
 *.so
