@@ -1,10 +1,10 @@
 # Dataset: should have subfolders trainA, trainB, valA, valB
 # dataroot = '/datasets/home/53/853/y1qin/dataset'
-# dataroot = '/Users/yuzheqin/yuzhe_project/temp_data'
-dataroot = '/home/yuzhe/temp_data'
+dataroot = '/Users/yuzheqin/yuzhe_project/temp_data'
+#dataroot = '/home/yuzhe/temp_data'
 
 # Dataset: 
-batch_size = 4
+batch_size = 1
 serial_batches = False
 num_threads = 4
 max_dataset_size = 10000
@@ -23,7 +23,7 @@ no_flip = False
 # General
 model = 'cycle_gan'
 no_lsgan = True
-gpu_ids = [1] #e.g. 0  0,1,2, 0,2. use -1 for CPU'
+gpu_ids = [] #e.g. 0  0,1,2, 0,2. use -1 for CPU'
 
 # Training
 name = 'experiment'
