@@ -27,7 +27,7 @@ gpu_ids = [] #e.g. 0  0,1,2, 0,2. use -1 for CPU'
 
 # Training
 name = 'experiment'
-checkpoints_dir = './temp_weight'
+checkpoints_dir = './checkpoints'
 suffix = '' # customized suffix: opt.name = opt.name + suffix: e.g., {model}_{netG}_size{loadSize}
 epoch = 'latest'
 load_iter = 0
