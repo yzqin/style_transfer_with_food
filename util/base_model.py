@@ -1,7 +1,7 @@
 import os
 import torch
 from collections import OrderedDict
-import networks
+import util.networks
 
 
 class BaseModel():
