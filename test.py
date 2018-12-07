@@ -16,6 +16,7 @@ if __name__ == '__main__':
     config.phase = 'test'
     config.model = 'test'
     config.loadSize = config.fineSize
+    config.isTrain = False
 
     config.num_threads = 1   # test code only supports num_threads = 1
     config.batch_size = 1    # test code only supports batch_size = 1
