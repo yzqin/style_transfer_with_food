@@ -2,7 +2,7 @@ import torch
 import itertools
 from util.image_pool import ImagePool
 from util.base_model import BaseModel
-import util.networks as network
+import util.networks as networks
 
 
 class CycleGANModel(BaseModel):
