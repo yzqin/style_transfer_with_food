@@ -50,14 +50,11 @@ You may observe something like that:
 ![visdom image](markdown/visdom.png)
 
 # Results
-## AA
-## BB
-## CC
-## DD
+![result](result.png)
 
 # Training details
 Details of the loss of two Discriminator and Generator:
-![]()
+![loss](markdown/loss.png)
 
 # Acknowledge
 - The code of visualization part comes from [Jun-Yan Zhu](http://people.csail.mit.edu/junyanz/)
