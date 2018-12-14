@@ -40,7 +40,7 @@ python3 train.py
 python3 test.py 
 ```
 
-Or, you can monitor your program step by step with [train.ipynb]() and [test.ipynb]()
+Or, you can monitor your program step by step with Jupter nootbook [train.ipynb](Train.ipynb) and [test.ipynb](Test.ipynb)
 
 # Babysitting your training
 Since we have output the training visualization with visdom server to `port:8097`, you can observe the training by your browser. 
