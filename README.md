@@ -61,3 +61,4 @@ Details of the loss of two Discriminator and Generator:
 - Dataloader is written by [Phillip Isola](https://phillipi.github.io/pix2pix/)
 
 # Author
+Yuzhe Qin,Sihan Wang,Hang Zhang,Yawen Zhao,Leyan Zhu
