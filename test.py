@@ -35,9 +35,6 @@ if __name__ == '__main__':
     # create a website
     web_dir = os.path.join(config.results_dir, config.name, '%s_%s' % (config.phase, config.epoch))
     webpage = html.HTML(web_dir, 'Experiment = %s, Phase = %s, Epoch = %s' % (config.name, config.phase, config.epoch))
-    # test with eval mode. This only affects layers like batchnorm and dropout.
-    # CycleGAN: It should not affect CycleGAN as CycleGAN uses instancenorm without dropout.
-    # model.eval()
     for i, data in enumerate(dataset):
         if i >= config.num_test:
             break
