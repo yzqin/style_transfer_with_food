@@ -51,6 +51,11 @@ Visit `your_server_IP:8097` in your laptop, where `your_server_IP` is the IP add
 You may observe something like that:
 ![visdom image](markdown/visdom.png)
 
+# Reproducing test results
+
+- Place the `checkpoints` folder in the project root path.
+- Place the `temp_data` folder in anywhere, make sure to change the `config.dataroot = THE_FULL_PATH_TO_TEMP_DATA`, e.g. `config.dataroot = '/home/yuzhe/temp_data'` 
+
 # Results
 ![result](markdown/result.png)
 
