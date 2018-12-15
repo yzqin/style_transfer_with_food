@@ -3,7 +3,7 @@
 This repo contains the project of [ECE 285f](https://www.math.u-bordeaux.fr/~cdeledal/teaching.php#learningFA18) 2018.
 We named this project as `Pie in The Sky` though it is not purely about food generation. But it can generate one type of food from the other, so it makes some `Pie in The Sky`. Actually, we truely get a food generator during the training of model. 
 
-For more test result, please visit our ![Project Website](https://sites.google.com/eng.ucsd.edu/ucsd-ece285-foodtrans-yshyl/home)
+For more test result, please visit our [Project Website](https://sites.google.com/eng.ucsd.edu/ucsd-ece285-foodtrans-yshyl/home)
 
 ![show](markdown/demo.png)
 
