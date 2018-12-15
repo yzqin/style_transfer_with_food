@@ -5,6 +5,9 @@ from util.visualizer import save_images
 from util import html
 import config
 
+# Identify the path of your data folder
+config.dataroot = THE_FULL_PATH_TO_TEMP_DATA # e.g '/home/yuzhe/temp_data'
+
 
 if __name__ == '__main__':
     # Testing
